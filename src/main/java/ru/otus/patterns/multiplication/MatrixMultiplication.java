@@ -11,13 +11,17 @@ import java.util.stream.IntStream;
 
 public class MatrixMultiplication {
     private static final Logger log = LogManager.getLogger(MatrixMultiplication.class);
-
     private static final Random RANDOM = new Random();
-    private static final AsyncMatrixOperations mathematics = new AsyncMatrixOperations();
+
+    private static final AsyncMatrixOperations mathematics;
+
+    static {
+        mathematics = new AsyncMatrixOperations();
+    }
 
     public static void main(String[] args) {
-        CompletableFuture<Matrix> firstPromise = CompletableFuture.completedFuture(randomizeMatrix(8, 8));
-        CompletableFuture<Matrix> secondPromise = CompletableFuture.completedFuture(randomizeMatrix(8, 8));
+        CompletableFuture<Matrix> firstPromise = CompletableFuture.completedFuture(randomizeMatrix(8, 7));
+        CompletableFuture<Matrix> secondPromise = CompletableFuture.completedFuture(randomizeMatrix(7, 8));
 
         log.info("Matrix multiplication started!");
         Matrix multiplicationResult = mathematics.multiply(firstPromise.join(), secondPromise.join());
@@ -27,7 +31,7 @@ public class MatrixMultiplication {
     private static Matrix randomizeMatrix(int row, int column) {
         Matrix.Builder builder = Matrix.newInstance();
         IntStream.range(0, row).forEach(
-                nextRow -> builder.addRow(IntStream.range(0, column).boxed().map(next -> RANDOM.nextInt(6)).toArray(Integer[]::new))
+                nextRow -> builder.addRow(IntStream.range(0, column).boxed().map(next -> RANDOM.nextInt(5)).toArray(Integer[]::new))
         );
         return builder.create();
     }

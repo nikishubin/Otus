@@ -8,7 +8,7 @@ import ru.otus.patterns.multiplication.data.Matrix;
 import java.util.stream.Stream;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class MathematicsOperationsTestData {
+public final class MathematicsOperationsTestData {
 
     public static Stream<Arguments> matrixMultiplicationData() {
         return Stream.of(

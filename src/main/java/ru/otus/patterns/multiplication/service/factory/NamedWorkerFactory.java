@@ -2,11 +2,11 @@ package ru.otus.patterns.multiplication.service.factory;
 
 import java.util.concurrent.ThreadFactory;
 
-public class WorkerThreadFactory implements ThreadFactory {
+public final class NamedWorkerFactory implements ThreadFactory {
     private final String name;
     private int counter;
 
-    public WorkerThreadFactory(String workerName) {
+    public NamedWorkerFactory(String workerName) {
         this.counter = 0;
         this.name = workerName;
     }

@@ -3,11 +3,13 @@ package ru.otus.patterns.multiplication.data;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class Matrix {
+public final class Matrix {
     private static final CharSequence ROW_DELIMITER = "\n";
     private static final CharSequence COLUMN_DELIMITER = " ";
 
@@ -22,11 +24,11 @@ public class Matrix {
         return new Builder();
     }
 
-    public static class Builder {
+    public static final class Builder {
         private final Matrix matrix;
         private int maximumRowLength;
 
-        public Builder() {
+        private Builder() {
             this.matrix = new Matrix();
         }
 
@@ -37,6 +39,7 @@ public class Matrix {
         }
 
         public Matrix create() {
+            this.matrix.rows = Collections.unmodifiableList(this.matrix.rows);
             return this.matrix;
         }
 
@@ -45,12 +48,12 @@ public class Matrix {
                 maximumRowLength = elements.length;
             }
 
-            if (elements.length == 0) {
-                throw new IllegalArgumentException("Строка матрицы не может быть пуста!");
+            if (elements.length == 0 || Arrays.stream(elements).anyMatch(Objects::isNull)) {
+                throw new IllegalArgumentException("Matrix row can't be empty!");
             }
 
             if (maximumRowLength != elements.length) {
-                throw new IllegalArgumentException(String.format("Строка матрицы (%d) не может быть короче остальных (%d)!", elements.length, maximumRowLength));
+                throw new IllegalArgumentException(String.format("The entered matrix row (%d) can't be shorter than the rest (%d)!", elements.length, maximumRowLength));
             }
         }
     }

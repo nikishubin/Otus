@@ -1,4 +1,4 @@
-<configuration scan="true" scanPeriod="10 seconds" debug="false">
+<configuration scan="true" scanPeriod="10 seconds">
     <appenders>
         <console name="STDOUT" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{dd-MM-yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36}.%M - %msg%n"/>
@@ -6,7 +6,7 @@
     </appenders>
 
     <loggers>
-        <root level="all">
+        <root level="info">
             <AppenderRef ref="STDOUT"/>
         </root>
     </loggers>
