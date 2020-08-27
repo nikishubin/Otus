@@ -1,13 +1,12 @@
-#Project for 'Otus' home works
+# Otus-MatrixMultiplication
 
-###Project Hierarchy:
-- Patterns
-  - Multithreading matrix multiplication
+###Project Modules:
+- matrix
+- logger
 
 ---
 
 Used technologies:
-- Java 14 without experimental functionality
+- Java 14 modularity without experimental functionality
 - Gradle 6.5
-- log4j 2
 - jUnit 5 (Jupiter), Mockito
