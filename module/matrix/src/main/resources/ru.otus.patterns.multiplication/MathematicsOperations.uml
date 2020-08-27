@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>ru.otus.patterns.multiplication.service.MathematicsOperations</OriginalElement>
+  <nodes>
+    <node x="454.5" y="262.0">ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations</node>
+    <node x="221.0" y="0.0">ru.otus.patterns.logger.Logger</node>
+    <node x="1027.5" y="126.0">ru.otus.patterns.multiplication.service.MathematicsOperationAvailability</node>
+    <node x="791.5" y="126.0">ru.otus.patterns.multiplication.service.MathematicsOperations</node>
+    <node x="566.5" y="126.0">ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory</node>
+    <node x="0.0" y="0.0">ru.otus.patterns.logger.impl.LoggerCore</node>
+    <node x="622.75" y="0.0">java.util.concurrent.ThreadFactory</node>
+    <node x="44.25" y="104.0">ru.otus.patterns.logger.impl.FileRollingLogger</node>
+    <node x="336.5" y="104.0">ru.otus.patterns.multiplication.data.Matrix</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations" target="ru.otus.patterns.multiplication.service.MathematicsOperationAvailability">
+      <point x="183.42857142857144" y="-49.0" />
+      <point x="851.9285714285714" y="242.0" />
+      <point x="1179.5" y="242.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+    <edge source="ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory" target="java.util.concurrent.ThreadFactory">
+      <point x="0.0" y="-27.0" />
+      <point x="668.5" y="79.0" />
+      <point x="673.75" y="79.0" />
+      <point x="-51.0" y="27.0" />
+    </edge>
+    <edge source="ru.otus.patterns.logger.impl.FileRollingLogger" target="ru.otus.patterns.logger.Logger">
+      <point x="71.0" y="-49.0" />
+      <point x="221.75" y="79.0" />
+      <point x="256.0" y="79.0" />
+      <point x="-35.0" y="27.0" />
+    </edge>
+    <edge source="ru.otus.patterns.logger.impl.FileRollingLogger" target="ru.otus.patterns.logger.impl.LoggerCore">
+      <point x="0.0" y="-49.0" />
+      <point x="50.25" y="27.0" />
+    </edge>
+    <edge source="ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations" target="ru.otus.patterns.multiplication.service.MathematicsOperations">
+      <point x="122.28571428571433" y="-49.0" />
+      <point x="790.7857142857143" y="232.0" />
+      <point x="899.5" y="232.0" />
+      <point x="0.0" y="27.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="666.0" y="180.0" />
+  <SelectedNodes>
+    <node>ru.otus.patterns.multiplication.service.MathematicsOperations</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

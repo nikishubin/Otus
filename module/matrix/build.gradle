@@ -1,0 +1,15 @@
+apply plugin: 'application'
+
+ext.moduleName = 'otus.patterns.matrix'
+
+application {
+    setProperty('mainModule', 'otus.patterns.matrix')
+    setProperty('mainClass', 'ru.otus.patterns.multiplication.MatrixMultiplication')
+}
+
+dependencies {
+    implementation project(":logger")
+
+    testImplementation "org.assertj:assertj-core:${assertjVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter:${jupiterVersion}"
+}

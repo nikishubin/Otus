@@ -1,7 +1,5 @@
 package ru.otus.patterns.multiplication.data;
 
-import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -13,7 +11,6 @@ public final class Matrix {
     private static final CharSequence ROW_DELIMITER = "\n";
     private static final CharSequence COLUMN_DELIMITER = " ";
 
-    @Getter
     private List<List<Integer>> rows;
 
     private Matrix() {
@@ -56,6 +53,10 @@ public final class Matrix {
                 throw new IllegalArgumentException(String.format("The entered matrix row (%d) can't be shorter than the rest (%d)!", elements.length, maximumRowLength));
             }
         }
+    }
+
+    public List<List<Integer>> getRows() {
+        return rows;
     }
 
     @Override
