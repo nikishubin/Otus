@@ -1,8 +1,8 @@
 package ru.otus.patterns.multiplication;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import ru.otus.patterns.multiplication.data.Matrix;
+import ru.otus.patterns.multiplication.logger.Logger;
+import ru.otus.patterns.multiplication.logger.impl.FileRollingLogger;
 import ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations;
 
 import java.util.Random;
@@ -10,7 +10,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.stream.IntStream;
 
 public class MatrixMultiplication {
-    private static final Logger log = LogManager.getLogger(MatrixMultiplication.class);
+    private static final Logger log = FileRollingLogger.getInstance();
     private static final Random RANDOM = new Random();
 
     private static final AsyncMatrixOperations mathematics;
@@ -23,9 +23,9 @@ public class MatrixMultiplication {
         CompletableFuture<Matrix> firstPromise = CompletableFuture.completedFuture(randomizeMatrix(8, 7));
         CompletableFuture<Matrix> secondPromise = CompletableFuture.completedFuture(randomizeMatrix(7, 8));
 
-        log.info("Matrix multiplication started!");
+        log.write("Matrix multiplication started!");
         Matrix multiplicationResult = mathematics.multiply(firstPromise.join(), secondPromise.join());
-        log.info("Multiplication result:\n{}", multiplicationResult);
+        log.write(String.format("Multiplication result: %n %s", multiplicationResult));
     }
 
     private static Matrix randomizeMatrix(int row, int column) {

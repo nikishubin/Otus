@@ -1,8 +1,8 @@
 package ru.otus.patterns.multiplication.service.impl;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import ru.otus.patterns.multiplication.data.Matrix;
+import ru.otus.patterns.multiplication.logger.Logger;
+import ru.otus.patterns.multiplication.logger.impl.FileRollingLogger;
 import ru.otus.patterns.multiplication.service.MathematicsOperationAvailability;
 import ru.otus.patterns.multiplication.service.MathematicsOperations;
 import ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory;
@@ -12,13 +12,14 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public final class AsyncMatrixOperations implements MathematicsOperations<Matrix>, MathematicsOperationAvailability<Matrix> {
-    private final Logger log = LogManager.getLogger(AsyncMatrixOperations.class);
+    private final Logger log = FileRollingLogger.getInstance();
 
-    private final NamedWorkerFactory threadFactory;
+    private final ThreadFactory threadFactory;
 
     public AsyncMatrixOperations() {
         this.threadFactory = new NamedWorkerFactory("Matrix");
@@ -61,7 +62,7 @@ public final class AsyncMatrixOperations implements MathematicsOperations<Matrix
     }
 
     private int multiplyMatrixCell(List<List<Integer>> first, List<List<Integer>> second, int row, int col) {
-        log.debug("Multiply row[{}] by column[{}]", row, col);
+        log.write(String.format("Multiply row[%d] by column[%d]", row, col));
         int value = 0;
         for (int i = 0; i < second.size(); i++) {
             value += first.get(row).get(i) * second.get(i).get(col);

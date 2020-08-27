@@ -3,52 +3,34 @@
   <ID>JAVA</ID>
   <OriginalElement>ru.otus.patterns.multiplication.AsyncMatrixOperationsTest</OriginalElement>
   <nodes>
-    <node x="402.0" y="648.0">ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations</node>
-    <node x="758.0" y="525.0">ru.otus.patterns.multiplication.service.MathematicsOperationAvailability</node>
-    <node x="0.0" y="467.0">ru.otus.patterns.multiplication.AsyncMatrixOperationsTest</node>
-    <node x="714.0" y="916.0">ru.otus.patterns.multiplication.service.MathematicsOperations</node>
-    <node x="306.0" y="0.0">ru.otus.patterns.multiplication.args.MathematicsOperationsTestData</node>
-    <node x="343.0" y="921.0">ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory</node>
-    <node x="219.0" y="1140.0">java.util.concurrent.ThreadFactory</node>
-    <node x="420.0" y="200.0">ru.otus.patterns.multiplication.data.Matrix</node>
+    <node x="-14.0" y="117.0">ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations</node>
+    <node x="48.0" y="-27.0">ru.otus.patterns.multiplication.service.MathematicsOperationAvailability</node>
+    <node x="-5.5" y="659.5">ru.otus.patterns.multiplication.AsyncMatrixOperationsTest</node>
+    <node x="492.0" y="173.0">ru.otus.patterns.multiplication.service.MathematicsOperations</node>
+    <node x="-23.5" y="459.0">ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory</node>
+    <node x="550.5" y="670.5">ru.otus.patterns.multiplication.args.MathematicsOperationsTestData</node>
+    <node x="-22.0" y="333.0">java.util.concurrent.ThreadFactory</node>
+    <node x="280.0" y="346.0">ru.otus.patterns.multiplication.data.Matrix</node>
   </nodes>
   <notes />
   <edges>
     <edge source="ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations" target="ru.otus.patterns.multiplication.service.MathematicsOperationAvailability">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="ru.otus.patterns.multiplication.args.MathematicsOperationsTestData" target="ru.otus.patterns.multiplication.data.Matrix">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="0.0" y="-83.0" />
+      <point x="0.0" y="27.0" />
     </edge>
     <edge source="ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory" target="java.util.concurrent.ThreadFactory">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="ru.otus.patterns.multiplication.AsyncMatrixOperationsTest" target="ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations">
-      <point x="-10.031998497329738" y="0.0" />
-      <point x="-10.031998497329738" y="-2.8421709430404007E-14" />
-    </edge>
-    <edge source="ru.otus.patterns.multiplication.AsyncMatrixOperationsTest" target="ru.otus.patterns.multiplication.data.Matrix">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations" target="ru.otus.patterns.multiplication.data.Matrix">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
+      <point x="0.0" y="-61.0" />
+      <point x="0.0" y="27.0" />
     </edge>
     <edge source="ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations" target="ru.otus.patterns.multiplication.service.MathematicsOperations">
-      <point x="0.0" y="0.0" />
-      <point x="0.0" y="0.0" />
-    </edge>
-    <edge source="ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations" target="ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory">
-      <point x="4.1436691310910305" y="2.798214811633187" />
-      <point x="4.143669131091027" y="2.7982148116331587" />
+      <point x="214.0" y="0.0" />
+      <point x="-108.0" y="0.0" />
     </edge>
   </edges>
-  <settings layout="Orthogonal" zoom="1.0" x="552.5" y="555.5" />
-  <SelectedNodes />
+  <settings layout="Orthogonal" zoom="1.0" x="433.0" y="377.0" />
+  <SelectedNodes>
+    <node>ru.otus.patterns.multiplication.AsyncMatrixOperationsTest</node>
+  </SelectedNodes>
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>

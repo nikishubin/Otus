@@ -20,9 +20,9 @@ bin/
 
 out
 build
-.gradle
-gradle
-gradle*
+/.gradle
+gradlew
+gradlew.bat
 
 *.class
 /classes
