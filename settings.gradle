@@ -1,1 +1,7 @@
-rootProject.name = 'MatrixMultiplication'
+rootProject.name = 'matrix-multiplication'
+
+include ':application'
+include ':logger'
+
+project(":application").projectDir = file("module/matrix")
+project(":logger").projectDir = file("module/logger")

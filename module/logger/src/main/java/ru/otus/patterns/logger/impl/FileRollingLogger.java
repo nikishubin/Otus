@@ -1,7 +1,7 @@
-package ru.otus.patterns.multiplication.logger.impl;
+package ru.otus.patterns.logger.impl;
 
-import ru.otus.patterns.multiplication.logger.Logger;
-import ru.otus.patterns.multiplication.logger.exception.LoggerException;
+import ru.otus.patterns.logger.Logger;
+import ru.otus.patterns.logger.exception.LoggerException;
 
 import java.io.File;
 import java.io.IOException;

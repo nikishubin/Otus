@@ -1,4 +1,4 @@
-package ru.otus.patterns.multiplication.logger.impl;
+package ru.otus.patterns.logger.impl;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

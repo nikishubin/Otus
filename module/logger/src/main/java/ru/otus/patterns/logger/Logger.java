@@ -1,4 +1,4 @@
-package ru.otus.patterns.multiplication.logger;
+package ru.otus.patterns.logger;
 
 public interface Logger {
 

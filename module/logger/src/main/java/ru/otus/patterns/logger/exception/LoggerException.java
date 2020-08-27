@@ -1,4 +1,4 @@
-package ru.otus.patterns.multiplication.logger.exception;
+package ru.otus.patterns.logger.exception;
 
 public class LoggerException extends RuntimeException {
 

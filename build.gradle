@@ -1,45 +1,37 @@
-plugins {
-    id 'java'
-    id 'idea'
-}
-
 ext {
-    set('lombokVersion', '1.18.12')
     set('jupiterVersion', '5.6.2')
     set('assertjVersion', '3.16.0')
     set('mockitoVersion', '3.3.3')
 }
 
-group 'ru.nshubin.otus'
-version '1.0.0'
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
 
-repositories {
-    mavenCentral()
-}
+    group = 'ru.otus.patterns'
+    version = '1.0.0'
 
-java {
     sourceCompatibility = JavaVersion.VERSION_14
     targetCompatibility = JavaVersion.VERSION_14
-}
 
-tasks.withType(Test) {
-    jvmArgs += "-XX:+ShowCodeDetailsInExceptionMessages"
-    useJUnitPlatform()
-}
+    repositories {
+        mavenCentral()
+    }
 
-tasks.withType(JavaExec) {
-    jvmArgs += "-XX:+ShowCodeDetailsInExceptionMessages"
-}
+    plugins.withType(JavaPlugin).configureEach {
+        java {
+            modularity.inferModulePath = true
+        }
+    }
 
-dependencies {
-    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    tasks.withType(Test) {
+        jvmArgs += "-XX:+ShowCodeDetailsInExceptionMessages"
+        useJUnitPlatform {
+            includeEngines("junit-jupiter")
+        }
+    }
 
-    compileOnly "org.projectlombok:lombok:${lombokVersion}"
-
-    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-
-    testImplementation "org.projectlombok:lombok:${lombokVersion}"
-    testImplementation "org.assertj:assertj-core:${assertjVersion}"
-    testImplementation "org.junit.jupiter:junit-jupiter:${jupiterVersion}"
-    testImplementation "org.mockito:mockito-junit-jupiter:${mockitoVersion}"
+    tasks.withType(JavaExec) {
+        jvmArgs += "-XX:+ShowCodeDetailsInExceptionMessages"
+    }
 }

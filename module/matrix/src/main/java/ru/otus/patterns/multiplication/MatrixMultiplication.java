@@ -1,8 +1,8 @@
 package ru.otus.patterns.multiplication;
 
+import ru.otus.patterns.logger.Logger;
+import ru.otus.patterns.logger.impl.FileRollingLogger;
 import ru.otus.patterns.multiplication.data.Matrix;
-import ru.otus.patterns.multiplication.logger.Logger;
-import ru.otus.patterns.multiplication.logger.impl.FileRollingLogger;
 import ru.otus.patterns.multiplication.service.impl.AsyncMatrixOperations;
 
 import java.util.Random;
@@ -25,7 +25,7 @@ public class MatrixMultiplication {
 
         log.write("Matrix multiplication started!");
         Matrix multiplicationResult = mathematics.multiply(firstPromise.join(), secondPromise.join());
-        log.write(String.format("Multiplication result: %n %s", multiplicationResult));
+        log.write(String.format("Multiplication result: %n%s", multiplicationResult));
     }
 
     private static Matrix randomizeMatrix(int row, int column) {

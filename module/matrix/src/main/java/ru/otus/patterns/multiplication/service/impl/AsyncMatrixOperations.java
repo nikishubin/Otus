@@ -1,8 +1,8 @@
 package ru.otus.patterns.multiplication.service.impl;
 
+import ru.otus.patterns.logger.Logger;
+import ru.otus.patterns.logger.impl.FileRollingLogger;
 import ru.otus.patterns.multiplication.data.Matrix;
-import ru.otus.patterns.multiplication.logger.Logger;
-import ru.otus.patterns.multiplication.logger.impl.FileRollingLogger;
 import ru.otus.patterns.multiplication.service.MathematicsOperationAvailability;
 import ru.otus.patterns.multiplication.service.MathematicsOperations;
 import ru.otus.patterns.multiplication.service.factory.NamedWorkerFactory;
@@ -62,11 +62,11 @@ public final class AsyncMatrixOperations implements MathematicsOperations<Matrix
     }
 
     private int multiplyMatrixCell(List<List<Integer>> first, List<List<Integer>> second, int row, int col) {
-        log.write(String.format("Multiply row[%d] by column[%d]", row, col));
         int value = 0;
         for (int i = 0; i < second.size(); i++) {
             value += first.get(row).get(i) * second.get(i).get(col);
         }
+        log.write(String.format("Multiply row[%d] by column[%d]. Result = %d", row, col, value));
         return value;
     }
 }
